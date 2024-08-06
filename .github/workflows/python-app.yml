@@ -25,6 +25,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install flake8  # Instala flake8 explicitamente
+
+    - name: Check flake8 installation
+      run: |
+        which flake8  # Verifica se o flake8 está no PATH
+        flake8 --version  # Mostra a versão do flake8 para confirmação
 
     - name: Lint with flake8
       run: |
